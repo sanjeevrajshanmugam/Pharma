@@ -1,454 +1,61 @@
-# Project Responsive Web Design using Bootstrap
-## Date:29-04-2024
+Configuration management (CM) for web applications is a systematic process that ensures consistency, accuracy, and control over the configuration and state of web applications throughout their lifecycle. It encompasses the management of all artifacts required to build, deploy, and operate a web application, including source code, dependencies, environment settings, and documentation.
 
-## AIM:
-To design a responsive website for a Pharmaceutical Company using Bootstrap.
+### Key Components of Configuration Management for Web Apps
 
+1. **Version Control:**
+   - **Source Code Management:** Use of version control systems (VCS) like Git, SVN, or Mercurial to manage changes to the source code. This allows multiple developers to work on the codebase concurrently, track changes, and revert to previous versions if needed.
+   - **Branching and Merging:** Use of branches for feature development, bug fixes, and experiments. Merging integrates changes from different branches back into the main branch (often called master or main).
 
-## DESIGN STEPS:
+2. **Build Automation:**
+   - **Build Scripts:** Scripts (using tools like Maven, Gradle, or npm) to automate the process of compiling the code, running tests, and packaging the application.
+   - **Continuous Integration (CI):** Automated process to integrate code changes frequently and run tests to detect issues early. Tools like Jenkins, Travis CI, CircleCI, and GitHub Actions facilitate CI.
 
-### Step 1:
-Clone the repository from GitHub.
+3. **Dependency Management:**
+   - **Package Managers:** Tools like npm, Yarn (for JavaScript), Composer (for PHP), or pip (for Python) manage the libraries and frameworks the application depends on.
+   - **Version Pinning:** Locking dependency versions to ensure consistency across different environments and prevent issues caused by updates.
 
-### Step 2:
-Create Django Admin project.
+4. **Environment Configuration:**
+   - **Configuration Files:** Use of environment-specific configuration files (e.g., .env files) to manage settings like database connections, API keys, and feature flags.
+   - **Configuration Management Tools:** Tools like Ansible, Chef, Puppet, or SaltStack automate the setup and management of servers and environments.
 
-### Step 3:
-Create a New App under the Django Admin project.
+5. **Infrastructure as Code (IaC):**
+   - **IaC Tools:** Tools like Terraform, AWS CloudFormation, or Azure Resource Manager allow you to define and manage your infrastructure using code. This ensures consistent environments across development, testing, and production.
+   - **Versioning and Reproducibility:** Infrastructure definitions are version-controlled, ensuring that environments can be reproduced and managed efficiently.
 
-### Step 4:
-Insert the necessary CSS and JavaScript files as external in order to use Bootstrap.
+6. **Deployment Automation:**
+   - **Continuous Deployment (CD):** Automating the deployment process to different environments (development, staging, production). CD tools like Jenkins, GitLab CI/CD, and Spinnaker facilitate this.
+   - **Containerization:** Use of Docker to package applications and their dependencies into containers, ensuring consistency across environments.
+   - **Orchestration:** Tools like Kubernetes or Docker Swarm manage the deployment, scaling, and operation of containerized applications.
 
-### Step 5:
-Create a HTML file and include the needed Bootstrap components.
+7. **Monitoring and Logging:**
+   - **Monitoring Tools:** Tools like Prometheus, Grafana, Datadog, or New Relic monitor the health and performance of the application and infrastructure.
+   - **Logging:** Centralized logging solutions like ELK Stack (Elasticsearch, Logstash, Kibana), Graylog, or Splunk collect and analyze logs from different components of the application.
 
-### Step 6:
-Publish the website in the LocalHost.
+8. **Backup and Recovery:**
+   - **Data Backups:** Regular backups of databases and critical data to ensure data can be restored in case of failures.
+   - **Disaster Recovery Plans:** Plans and procedures to recover the application and data in case of catastrophic failures.
 
-## PROGRAM :
-~~~
-home.html
+### Best Practices for Configuration Management in Web Apps
 
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HOME</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom CSS -->
-  <style>
-    body {
-      background-image: url("back.webp");
-      background-size: cover;
-      background-repeat: no-repeat;
-      font-size: 19px;
-    }
-    footer{
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      background-color: hsl(176, 70%, 44%); 
-      color: white;
-      text-align: center;
-      padding: 10px 0; 
-    }
-  </style>
-</head>
-<body>
+1. **Consistency:**
+   - Ensure that all environments (development, testing, staging, production) are consistent in their configuration and setup.
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-    <a class="navbar-brand" href="#">AI PHARMACEUTICALS</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+2. **Separation of Concerns:**
+   - Separate configuration from code. Use configuration files or environment variables to manage environment-specific settings.
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="product.html">Products</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
-        </li>
-        
-      </ul>
-    </div>
-  </nav>
+3. **Documentation:**
+   - Maintain up-to-date documentation for all configuration management processes, including setup instructions, deployment processes, and troubleshooting guides.
 
-  <!-- Page Content -->
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-8">
-        <h1>WELCOME TO AI PHARMACEUTICAL</h1>
-        <p>Welcome to AI Pharmaceuticals.We provide you the best quality of Medicines.Customers well being is what we wish always.</p>
-        <p>At Our Pharmaceuticals, we provide you all kind of medicines.</p>
-        <p>Thank you for choosing and trusting AI Pharmaceuticals.</p>
-      </div>
-      <div class="col-md-5">
-        <img src="tb.jpg" class="img-fluid" alt="Pharmacy Image" width="2000" height="2000">
-      </div>
-      <div class="col-md-4">
-        <img src="tt.avif" class="img-fluid" alt="Pharmacy Image" width="2000" height="2000">
-      </div>
-       
-      </div>
-    </div>
-  </div>
+4. **Security:**
+   - Protect sensitive information like API keys, passwords, and secrets using secure storage solutions and access controls.
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-4 mt-5">
-    <p>&copy; 2024 PharmaCompany - VARSHA A(212223220121). All rights reserved.</p>
-  </footer>
+5. **Automation:**
+   - Automate repetitive tasks to reduce human error and increase efficiency. Use CI/CD pipelines for automated testing and deployment.
 
-  <!-- Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
-~~~
+6. **Version Control Everything:**
+   - Use version control not just for source code, but also for configuration files, infrastructure definitions, and deployment scripts.
 
-~~~
-about.html
+7. **Testing:**
+   - Regularly test your configuration management processes, including backup and recovery procedures, to ensure they work as expected.
 
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom CSS -->
-  <style>
-    body {
-      background-image: url("back.webp");
-      background-size: cover;
-      background-repeat: no-repeat;
-      font-size: 19px;
-    }
-    footer{
-    position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      background-color: #343a40; 
-      color: white;
-      text-align: center;
-      padding: 10px 0; 
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-    <a class="navbar-brand" href="#">AI PHARMACEUTICAL</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="home.html">Home</a>
-        </li>
-        <li class="nav-item dropdown active">
-          <a class="nav-link dropdown-toggle" href="about.html" id="navbarDropdownAbout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            About
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownAbout">
-            <a class="dropdown-item" href="#vision">Vision</a>
-            <a class="dropdown-item" href="#mission">Mission</a>
-            <a class="dropdown-item" href="#values">Values</a>
-            <!-- Add more subheadings as needed -->
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="product.html">Products</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Page Content -->
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-12">
-        <h1>About AI PHARMACEUTICALS</h1>
-        <div id="vision">
-          <h2>Vision</h2>
-          <p>Our vision is to become a global leader in providing groundbreaking healthcare solutions that enhance the well-being of individuals worldwide. We aspire to pioneer innovations that redefine healthcare standards, empowering people to lead healthier, more fulfilling lives.</p>
-        </div>
-        <div id="mission">
-          <h2>Mission</h2>
-          <p>Our mission is to develop and deliver a comprehensive range of safe, effective, and affordable healthcare solutions that cater to the diverse needs of our customers. Through relentless dedication to research, development, and collaboration, we aim to address unmet medical needs and contribute positively to the health and vitality of communities globally.</p>
-        </div>
-        <div id="values">
-          <h2>Values</h2>
-          <p>Quality lies at the core of everything we do, as we uphold the highest standards of excellence in all aspects of our operations. Integrity forms the foundation of our business practices, guiding us to conduct ourselves with unwavering honesty, transparency, and ethical conduct. Innovation fuels our quest for progress, driving us to continually push boundaries and improve our products and services to better serve our customers. With a relentless focus on customer needs, we strive to understand and anticipate their requirements, ensuring their satisfaction and trust. Through teamwork and collaboration, we harness the collective talents and strengths of our diverse workforce to achieve our shared objectives and deliver exceptional results that make a meaningful difference in the lives of individuals and communities.
-          </p>
-        </div>
-        <!-- Add more subheadings as needed -->
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-4 mt-5">
-    <p>&copy; 2024 PharmaCompany - VARSHA A(212223220121) All rights reserved.</p>
-  </footer>
-
-  <!-- Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
-~~~
-
-~~~
-product.html
-
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Products</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom CSS -->
-  <style>
-    body {
-      background-image: url("back.webp");
-      background-size: cover;
-      background-repeat: no-repeat;
-      font-size: 10px;
-    }
-    footer{
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      background-color: #343a40; 
-      color: white;
-      text-align: center;
-      padding: 10px 0; 
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-    <a class="navbar-brand" href="#">AI PHARMACEUTICALS</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="home.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="product.html">Products <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Register</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Page Content -->
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-12">
-        <h1>Our Products</h1>
-        <div class="card-deck">
-          <div class="card">
-            <img src="cough.webp" class="card-img-top" alt="Product 1">
-            <div class="card-body">
-              <h5 class="card-title">Product 1</h5>
-              <p class="card-text">Pankajakasthuri Cough Syrup with Tulsi 100ml</p>
-              <a href="#" class="btn btn-primary">Buy Now</a>
-            </div>
-          </div>
-          <div class="card">
-            <img src="boster.webp" class="card-img-top" alt="Product 2">
-            <div class="card-body">
-              <h5 class="card-title">Product 2</h5>
-              <p class="card-text">Health Veda Organics Natural Immunity Booster Capsules for Men & Women I Immunity blend of Amla, Giloy, Tulsi, Neem & Ashwagandha I 60 Veg Capsules</p>
-              <a href="#" class="btn btn-primary">Buy Now</a>
-            </div>
-          </div>
-          <div class="card">
-            <img src="tablet.jpg" class="card-img-top" alt="Product 3">
-            <div class="card-body">
-              <h5 class="card-title">Product 3</h5>
-              <p class="card-text">Amway Tulsi Tablet Supports Immunity 60N (Tablets) for Immunity</p>
-              <a href="#" class="btn btn-primary">Buy Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-4 mt-5">
-    <p>&copy; 2024 PharmaCompany - VARSHA A(212223220121). All rights reserved.</p>
-  </footer>
-
-  <!-- Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
-
-contact.html
-
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom CSS -->
-  <style>
-    body {
-      background-image: url("back.webp");
-      background-size: cover;
-      background-repeat: no-repeat;
-      font-size: 19px;
-    }
-    footer{
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      background-color: hsl(73, 87%, 48%); 
-      color: white;
-      text-align: center;
-      padding: 10px 0; 
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-    <a class="navbar-brand" href="#">AI PHARMACEUTICAL</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="home.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="product.html">Products</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="contact.html">Contact <span class="sr-only">(current)</span></a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Page Content -->
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-8">
-        <h1>Contact Us</h1>
-        <p>For any queries please fill the form given below.</p>
-        <form>
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter your name">
-          </div>
-          <div class="form-group">
-            <label for="email">Your Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter your email">
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-      <div class="col-md-4">
-        <h2>AI PHARMACEUTICAL</h2>
-        <address>
-          <strong>Address:</strong><br>
-          near college street,chennai<br>
-          <br>
-          <strong>Email:</strong><br>
-          ai.pharma@gmail.com<br><br>
-          <strong>Phone:</strong><br>
-          +91-8856421390
-        </address>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-4 mt-5">
-    <p>&copy; 2024 PharmaCompany - VARSHA A(212223220121) All rights reserved.</p>
-  </footer>
-
-  <!-- Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
-~~~
-
-## OUTPUT:
-![Screenshot 2024-05-11 090510](https://github.com/04Varsha/Pharma/assets/149035374/3abd0773-579d-4710-a5e6-9711dc966c39)
-
-![Screenshot 2024-05-11 091815](https://github.com/04Varsha/Pharma/assets/149035374/6e79aecf-8d13-447c-ba48-8f1448e46d59)
-
-![Screenshot 2024-05-11 131331](https://github.com/04Varsha/Pharma/assets/149035374/1b44e83e-57b4-4809-a804-2bec282f3c1e)
-
-![Screenshot 2024-05-11 091203](https://github.com/04Varsha/Pharma/assets/149035374/fd2df671-467e-444c-aba9-a7f41128e842)
-
-## RESULT:
-The Project for responsive web design using Bootstrap is completed successfully.
+By implementing effective configuration management practices, web applications can achieve greater stability, consistency, and reliability, reducing the risk of errors and downtime. This ultimately leads to smoother development cycles and a more robust production environment.
